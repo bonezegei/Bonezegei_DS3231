@@ -25,14 +25,23 @@ public:
   uint8_t getDate();     //return Date
   uint8_t getMonth();    //return Month
   uint8_t getYear();     //return Year
+  uint8_t getAMPM();     //return 0=AM  1=PM
+  uint8_t getFormat();   //return 12 or 24 hour format
+
+  void setFormat(uint8_t fmt); // set time format 12 or 24
+  void setAMPM(uint8_t ampm);  // set AM or PM   PM=1 AM=0
+  void setTime(char *t);       // set time Hour:Minute:Seconds 
+  void setDate(char *d);       // set Date Month:Date:Year
 
 private:
   uint8_t _addr;
   uint8_t _data[13];
 
-  uint8_t _minutes;  //0 - 60 seconds
-  uint8_t _seconds;  //0 - 60 minutes
-  uint8_t _hour;
+  uint8_t _minutes;  // 0 - 60 seconds
+  uint8_t _seconds;  // 0 - 60 minutes
+  uint8_t _hour;     // 1-12 or 0 -23
+  uint8_t _ampm;     // 0=AM  1=PM
+  uint8_t _hour12;   // 12 or 24  hour format  
 
   uint8_t _day;    // 1-7  day of week
   uint8_t _date;   // 1-31 date
