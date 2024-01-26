@@ -15,8 +15,18 @@ public:
   Bonezegei_DS3231(uint8_t addr);
 
   char begin();
+  uint8_t convert(uint8_t data);
   char getTime();
 
+  uint8_t getSeconds();  //return seconds
+  uint8_t getMinute();   //return Minute
+  uint8_t getHour();     //return Hour
+  uint8_t getDay();      //return Day of Week
+  uint8_t getDate();     //return Date
+  uint8_t getMonth();    //return Month
+  uint8_t getYear();     //return Year
+
+private:
   uint8_t _addr;
   uint8_t _data[13];
 
@@ -24,10 +34,10 @@ public:
   uint8_t _seconds;  //0 - 60 minutes
   uint8_t _hour;
 
-  uint8_t _day;     // 1-7  day of week
-  uint8_t _date;    // 1-31 date 
-  uint8_t _month;   // 1- 12 month
-  uint8t_t _year;   // 0- 99 year
+  uint8_t _day;    // 1-7  day of week
+  uint8_t _date;   // 1-31 date
+  uint8_t _month;  // 1- 12 month
+  uint8_t _year;   // 0- 99 year
 };
 
 #endif
