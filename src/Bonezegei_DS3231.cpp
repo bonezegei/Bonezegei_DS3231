@@ -188,3 +188,7 @@ void Bonezegei_DS3231::setDate(const char *d) {
   Wire.write(_data[6]);
   Wire.endTransmission();
 }
+
+void  Bonezegei_DS3231::setDay(uint8_t d){
+  
+}
