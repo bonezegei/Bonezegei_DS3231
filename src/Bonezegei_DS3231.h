@@ -33,6 +33,7 @@ public:
   void setAMPM(uint8_t ampm);   // set AM or PM   PM=1 AM=0
   void setTime(const char *t);  // set time Hour:Minute:Seconds
   void setDate(const char *d);  // set Date Month:Date:Year
+  void setDay(uint8_t d);       // set Day of week
 
 private:
   uint8_t _addr;
