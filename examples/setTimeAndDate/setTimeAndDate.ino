@@ -18,9 +18,11 @@ void setup() {
 }
 
 void loop() {
-
+  char d[32];
   if (rtc.getTime()) {
-    Serial.printf("Time %02d:%02d:%02d ", rtc.getHour(), rtc.getMinute(), rtc.getSeconds());
+    //Serial.printf("Time %02d:%02d:%02d ", rtc.getHour(), rtc.getMinute(), rtc.getSeconds());
+    sprintf(d, "Time %02d:%02d:%02d ", rtc.getHour(), rtc.getMinute(), rtc.getSeconds());
+    Serial.print(d);
 
     if (rtc.getFormat() == 12) {  // returns 12 or 24 hour format
 
@@ -31,7 +33,9 @@ void loop() {
       }
     }
 
-    Serial.printf("Date %02d-%02d-%d \n", rtc.getMonth(), rtc.getDate(), rtc.getYear());
+    //Serial.printf("Date %02d-%02d-%d \n", rtc.getMonth(), rtc.getDate(), rtc.getYear());
+    sprintf(d, "Date %02d-%02d-%d \n", rtc.getMonth(), rtc.getDate(), rtc.getYear());
+    Serial.print(d);
   }
 
   delay(1000);
