@@ -14,11 +14,15 @@ Bonezegei_DS3231::Bonezegei_DS3231(uint8_t addr) {
 }
 
 char Bonezegei_DS3231::begin() {
+  /*
   if (Wire.begin()) {
     return 1;
   } else {
     return 0;
   }
+  */
+  Wire.begin();
+  return 1;
 }
 
 uint8_t Bonezegei_DS3231::convert(uint8_t data) {
